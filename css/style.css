@@ -1,0 +1,320 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+header {
+    width: 1200px;
+    max-width: 90%;
+    height: 50px; /* Increased height for better alignment */
+    margin: auto;
+    display: grid;
+    grid-template-columns: 100px 1fr 100px;
+    grid-template-rows: 50px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2.4rem;
+    font-weight: 700;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamnav {
+    border: 2px solid rgb(255, 255, 255);
+    position: fixed;
+    top: 10%;
+    right: -100%; /* Initially hide off-screen */
+    z-index: 200;
+    height: 200px;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    padding: 20px 0;
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    background-color: #ffffff1e;
+    transition: right 0.3s ease-in-out; /* Updated for smooth transition */
+}
+
+.hamnav a {
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.8rem;
+}
+
+nav a {
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: .1rem;
+    font-size: 2rem;
+    margin: 0 1rem;
+}
+
+.search {
+    font-size: 2.2rem;
+    color: white;
+    text-transform: capitalize;
+    position: relative; /* Ensure proper positioning of the label */
+}
+
+.search label {
+    display: none;
+    cursor: pointer; /* Make sure label is clickable */
+}
+
+.search input {
+    display: none; /* Hide the checkbox */
+}
+
+/* Slider Styles */
+.slider {
+    height: 100vh;
+    margin-top: -50px;
+    position: relative;
+}
+
+.slider .list{
+    border: 5px solid white;
+}
+
+.slider .list .item {
+
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out; /* Smooth transition */
+}
+
+.slider .list .item::after {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, #000000da 40%, transparent);
+}
+
+.slider .list .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider .list .item .content {
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 100;
+}
+
+.slider .list .item .content p:nth-child(1) {
+    text-transform: uppercase;
+    color: white;
+    letter-spacing: 1rem;
+}
+
+.slider .list .item .content h2 {
+    font-size: 10rem;
+    margin: 1.2rem 0;
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: .1rem;
+}
+
+.slider .list .item .content p:nth-child(3) {
+    font-size: 1.8rem;
+    color: white;
+    letter-spacing: .1rem;
+    word-spacing: .2rem;
+}
+
+.slider .list .item.active {
+    opacity: 1;
+    z-index: 10;
+}
+
+.slider .list .item .content p:nth-child(1),
+.slider .list .item .content h2,
+.slider .list .item .content p:nth-child(3) {
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 0.7s ease-in-out 1 forwards;
+}
+
+.slider .list .item .content h2 {
+    animation-delay: 1s;
+}
+
+.slider .list .item .content p:nth-child(3) {
+    animation-duration: 1.3s;
+}
+
+@keyframes showContent {
+    to {
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+
+/* Arrow Button Styles */
+.arrow {
+    position: absolute;
+    z-index: 100;
+    top: 25%;
+    right: 15%;
+}
+
+.arrow button {
+    background-color: rgba(255, 255, 255, 0.24);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    margin: 0 .5rem;
+    outline: none;
+    font-size: 1.8rem;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.arrow button:hover {
+    box-shadow: 0 0 20px white;
+    background-color: white;
+    color: black;
+}
+
+/* Thumbnail Styles */
+.thumbnail {
+    position: absolute;
+    z-index: 100;
+    left: 10%;
+    bottom: 5%;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 250px;
+    padding: 0 50px;
+    box-sizing: border-box;
+    overflow-x: auto;
+}
+
+.thumbnail::-webkit-scrollbar {
+    width: 0;
+}
+
+.thumbnail .item {
+    width: 150px;
+    height: 220px;
+    filter: brightness(.5);
+    transition: filter 0.5s ease-in-out;
+    flex-shrink: 0;
+}
+
+.thumbnail .item.active {
+    filter: brightness(1);
+}
+
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.thumbnail .item .content {
+    position: absolute;
+    inset: auto 10px 10px 10px;
+    color: white;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    font-weight: 600;
+    letter-spacing: .1rem;
+}
+
+/* Media Queries */
+@media screen and (max-width: 678px) {
+    .slider .list .item .content h2 {
+        font-size: 5rem;
+    }
+
+    html {
+        font-size: 8px;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    .search label {
+        display: block;
+    }
+
+    .arrow {
+        top: unset;
+        bottom: 2%;
+        left: 4%;
+    }
+
+    .hamnav {
+        /* Initially hide off-screen */
+        right: -100%;
+        transition: right 0.3s ease-in-out;
+    }
+}
+
+
+/* Ensure no horizontal overflow */
+body, html {
+    overflow-x: hidden;
+}
+
+/* Example of fixing large elements */
+.container {
+    max-width: 100%;
+    overflow-x: auto; /* Allow vertical scrolling if needed */
+}
+
+/* Example for fixing fixed width elements */
+img, .element {
+    max-width: 100%; /* Prevent overflow for images and other elements */
+}
+
+/* Ensure the layout adjusts to the viewport width */
+.header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    box-sizing: border-box;
+}

@@ -1,12 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>An Image Slider</title>
-    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <h1>hello world</h1>
+    <!-- header of the web site -->
+
+    <header>
+        <div class="logo">slider</div>
+        <nav>
+            <a href="">home</a>
+            <a href="">about</a>
+            <a href="">contact</a>
+        </nav>
+        <div class="search">
+            <label for="menu"> 
+                x
+            </label>
+            <input type="checkbox" id="menu">
+           
+        </div>
+        <div class="hamnav">
+            <a href="">home</a>
+            <a href="">about</a>
+            <a href="">contact</a>
+        </div>
+    </header>
+
+    <!-- slider content of the web site -->
+    <div class="slider">
+        <!-- list of items of slider -->
+        <div class="list">
+            <div class="item active">
+                <img src="/images/joker-5282593_1280.jpg" alt="">
+                <div class="content">
+                    <p>design</p>
+                    <h2>joker</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae corrupti quod minus odio illum
+                        fugiat
+                        sit eaque necessitatibus. Quisquam, non.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/ai-generated-8590746_1280.png" alt="">
+                <div class="content">
+                    <p>design</p>
+                    <h2>batman</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae corrupti quod minus odio illum
+                        fugiat
+                        sit eaque necessitatibus. Quisquam, non.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/ai-generated-8709455_1280.png" alt="">
+                <div class="content">
+                    <p>design</p>
+                    <h2>ghostrider</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae corrupti quod minus odio illum
+                        fugiat
+                        sit eaque necessitatibus. Quisquam, non.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/superhero-8137921_1280.jpg" alt="">
+                <div class="content">
+                    <p>design</p>
+                    <h2>spiderman</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae corrupti quod minus odio illum
+                        fugiat
+                        sit eaque necessitatibus. Quisquam, non.</p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/iron-man-6288206_1280.jpg" alt="">
+                <div class="content">
+                    <p>design</p>
+                    <h2>ironman</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae corrupti quod minus odio illum
+                        fugiat
+                        sit eaque necessitatibus. Quisquam, non.</p>
+                </div>
+            </div>
+        </div>
+        <!-- arrows buttons of the slider -->
+         <div class="arrow">
+            <button id="prev"><</button>
+            <button id="next">></button>
+         </div>
+         <!-- thumbnail of the slider -->
+          <div class="thumbnail">
+            <div class="item active">
+                <img src="/images/joker-5282593_1280.jpg" alt="">
+                <div class="content">
+                    joker
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/ai-generated-8590746_1280.png" alt="">
+                <div class="content">
+                    batman
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/ai-generated-8709455_1280.png" alt="">
+                <div class="content">
+                    ghostrider
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/superhero-8137921_1280.jpg" alt="">
+                <div class="content">
+                    spiderman
+                </div>
+            </div>
+            <div class="item">
+                <img src="/images/iron-man-6288206_1280.jpg" alt="">
+                <div class="content">
+                    ironman
+                </div>
+            </div>
+          </div>
+    </div>
+
+    <script src="script.js">
+ 
+    </script>
 </body>
+
 </html>
